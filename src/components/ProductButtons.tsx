@@ -17,14 +17,13 @@ export const ProductButtons = ({ className, style }: Props) => {
         () => !!maxCount && counter === maxCount,
         [counter, maxCount],
     )
-    // console.log({ maxCount });
 
     return (
         <div className={`${styles.buttonsContainer} ${className}`} style={style}>
             <button className={styles.buttonMinus} onClick={() => increseBy(-1)}>-</button>
             <div className={styles.countLabel}>{counter}</div>
             <button
-                className={`${styles.buttonAdd} ${ isMaxReached() && styles.disabled}`}
+                className={`${styles.buttonAdd} ${isMaxReached() && styles.disabled}`}
                 onClick={() => increseBy(+1)}
             >
                 +
